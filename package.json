@@ -1,0 +1,36 @@
+{
+  "name": "dayly-assistant",
+  "version": "1.0.0",
+  "description": "Assistente personale quotidiano - Multi-piattaforma",
+  "private": true,
+  "workspaces": [
+    "packages/web",
+    "packages/mobile",
+    "packages/desktop",
+    "packages/shared",
+    "packages/firebase-functions"
+  ],
+  "scripts": {
+    "dev:all": "npm run dev --workspaces",
+    "dev:web": "npm run dev -w packages/web",
+    "dev:mobile": "npm run dev -w packages/mobile",
+    "dev:desktop": "npm run dev -w packages/desktop",
+    "build:all": "npm run build --workspaces",
+    "build:web": "npm run build -w packages/web",
+    "build:mobile": "npm run build -w packages/mobile",
+    "build:desktop": "npm run build -w packages/desktop",
+    "test": "npm test --workspaces",
+    "lint": "eslint packages/**/*.{js,jsx,ts,tsx}",
+    "format": "prettier --write packages/**/*.{js,jsx,ts,tsx,md,json}"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
