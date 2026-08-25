@@ -9,14 +9,19 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#4f46e5"
     },
     "plugins": [
       "expo-router"
     ],
     "schemes": [
-      "myapp"
+      "dayly"
     ],
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/favicon.png"
+    },
     "platforms": [
       "ios",
       "android",
@@ -25,11 +30,39 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#4f46e5"
+      },
+      "package": "com.dayly.app",
+      "versionCode": 1,
+      "permissions": [
+        "INTERNET",
+        "READ_CALENDAR",
+        "WRITE_CALENDAR"
+      ]
     },
     "ios": {
-      "supportsTabletMode": true
-    }
+      "supportsTabletMode": true,
+      "bundleIdentifier": "com.dayly.app",
+      "buildNumber": "1.0.0",
+      "requiredDeviceCapabilities": [
+        "armv7"
+      ],
+      "userInterfaceStyle": "light",
+      "infoPlist": {
+        "NSCalendarsUsageDescription": "Dayly ha bisogno di accesso al calendario per sincronizzare i tuoi appuntamenti",
+        "NSRemindersUsageDescription": "Dayly ha bisogno di accesso ai reminder per le notifiche"
+      }
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/YOUR_PROJECT_ID"
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "privacy": "public"
   }
 }

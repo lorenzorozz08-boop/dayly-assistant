@@ -1,20 +1,29 @@
 {
   "name": "@dayly/mobile",
   "version": "1.0.0",
-  "description": "Dayly Mobile App",
+  "description": "Dayly Mobile App - iOS & Android",
   "main": "index.js",
   "scripts": {
     "start": "expo start",
     "dev": "expo start",
-    "build": "expo build:web",
+    "build:web": "expo build:web",
+    "build:ios": "eas build --platform ios --type app-store",
+    "build:android": "eas build --platform android --type app-store",
+    "build:all": "eas build --platform all",
+    "submit:ios": "eas submit --platform ios",
+    "submit:android": "eas submit --platform android",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "prebuild": "expo prebuild --clean"
   },
   "dependencies": {
     "@dayly/shared": "workspace:*",
     "expo": "~49.0.0",
     "expo-router": "~2.0.0",
+    "expo-status-bar": "~1.6.0",
+    "expo-font": "~11.4.0",
+    "expo-splash-screen": "~0.20.5",
     "react": "18.2.0",
     "react-native": "0.72.3",
     "@react-navigation/native": "^6.1.8",
@@ -25,8 +34,14 @@
     "redux": "^4.2.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.0",
     "@types/react": "~18.2.0",
     "@types/react-native": "~0.72.0",
     "typescript": "^5.0.0"
+  },
+  "expo": {
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
